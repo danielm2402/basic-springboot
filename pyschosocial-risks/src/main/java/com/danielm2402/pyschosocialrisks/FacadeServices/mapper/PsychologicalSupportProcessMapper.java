@@ -17,6 +17,8 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface PsychologicalSupportProcessMapper {
+
+    PsychologicalSupportProcess toEntity(PsychologicalSupportProcessDTO psp);
     PsychologicalSupportProcessDTO toDto(PsychologicalSupportProcess psp);
 
     List<PsychologicalSupportProcessDTO> toDtoList(List<PsychologicalSupportProcess> psp);
@@ -32,4 +34,13 @@ public interface PsychologicalSupportProcessMapper {
 
     PsyFactorsExtraDTO map(PsyFactorsExtra psyFactorsExtra);
     PsyFactorsIntraDTO map(PsyFactorsIntra psyFactorsIntra);
+
+
+    default AbstractQuestionnaire map(AbstractQuestionnaireDTO questionnaire) {
+            return map((PsyFactorsExtraDTO) questionnaire);
+    }
+
+    PsyFactorsExtra map(PsyFactorsExtraDTO psyFactorsExtra);
+    PsyFactorsIntra map(PsyFactorsIntraDTO psyFactorsIntra);
+
 }

@@ -11,5 +11,6 @@ public class PsyFactorsExtraDTO extends AbstractQuestionnaireDTO {
     private String name;
     private Integer score;
     public PsyFactorsExtraDTO(){
+        super();
     }
 }

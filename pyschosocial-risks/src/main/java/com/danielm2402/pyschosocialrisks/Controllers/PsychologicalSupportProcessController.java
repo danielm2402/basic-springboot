@@ -24,8 +24,8 @@ public class PsychologicalSupportProcessController {
         return psychologicalSupportProcessService.findById(id);
     }
     @PostMapping("/psychologicalsupportprocess")
-    public PsychologicalSupportProcessDTO PostPsychologicalSupportProcess(@RequestBody PsychologicalSupportProcessDTO psp){
-        System.out.println("Test");
+    public PsychologicalSupportProcessDTO PostPsychologicalSupportProcess (@RequestBody PsychologicalSupportProcessDTO psp){
+        System.out.println("Testtttt"+ psp.getId());
         return psychologicalSupportProcessService.create(psp);
     }
 

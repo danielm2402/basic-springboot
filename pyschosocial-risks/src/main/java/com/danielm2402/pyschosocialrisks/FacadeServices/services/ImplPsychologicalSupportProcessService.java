@@ -37,8 +37,9 @@ public class ImplPsychologicalSupportProcessService implements IPsychologicalSup
     }
 
     @Override
-    public PsychologicalSupportProcessDTO create(@RequestBody PsychologicalSupportProcessDTO psp ) {
-
+    public PsychologicalSupportProcessDTO create(PsychologicalSupportProcessDTO psp ) {
+        System.out.println("PROBANDOOO" + psp);
+    System.out.println(psp.getName());
     return null;
     }
 
