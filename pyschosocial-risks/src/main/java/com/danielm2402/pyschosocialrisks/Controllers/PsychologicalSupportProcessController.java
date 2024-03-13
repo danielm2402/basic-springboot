@@ -4,9 +4,7 @@ import com.danielm2402.pyschosocialrisks.FacadeServices.dtos.PsychologicalSuppor
 import com.danielm2402.pyschosocialrisks.FacadeServices.services.IPsychologicalSupportProcessService;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,8 +14,19 @@ public class PsychologicalSupportProcessController {
     @Autowired
     private IPsychologicalSupportProcessService psychologicalSupportProcessService;
     @GetMapping("/psychologicalsupportprocess")
-    public List<PsychologicalSupportProcessDTO> index(){
+    public List<PsychologicalSupportProcessDTO> getPsychologicalSupportProcess(){
         System.out.println("Test");
         return psychologicalSupportProcessService.findAll();
     }
+    @GetMapping("/psychologicalsupportprocess/{id}")
+    public PsychologicalSupportProcessDTO getPsychologicalSupportProcessByID(@PathVariable String id){
+        System.out.println("Test");
+        return psychologicalSupportProcessService.findById(id);
+    }
+    @PostMapping("/psychologicalsupportprocess")
+    public PsychologicalSupportProcessDTO PostPsychologicalSupportProcess(@RequestBody PsychologicalSupportProcessDTO psp){
+        System.out.println("Test");
+        return psychologicalSupportProcessService.create(psp);
+    }
+
 }

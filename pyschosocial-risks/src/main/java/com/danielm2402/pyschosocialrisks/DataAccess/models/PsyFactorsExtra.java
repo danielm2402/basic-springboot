@@ -18,4 +18,9 @@ public class PsyFactorsExtra extends AbstractQuestionnaire {
     public void removeQuestion(Integer index) {
     this.questions.remove(index);
     }
+
+    public PsyFactorsExtra(){
+        super();
+
+    }
 }

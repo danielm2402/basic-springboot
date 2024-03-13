@@ -17,6 +17,7 @@ public class QuestionnaireRepository {
     }
 
     public PsychologicalSupportProcess savePSP(PsychologicalSupportProcess psp){
+        System.out.println("CREANDOOO" + psp.getId());
         if(this.psp.add(psp)){
             return psp;
         }
@@ -28,7 +29,7 @@ public class QuestionnaireRepository {
 
     public PsychologicalSupportProcess findById (String id){
         for (PsychologicalSupportProcess psp: this.psp){
-            if (psp.getId() == id){
+            if (psp.getId().equals(id)){
                 return psp;
             }
         }
@@ -37,7 +38,7 @@ public class QuestionnaireRepository {
 
     public PsychologicalSupportProcess updatePSP (String id, PsychologicalSupportProcess psp){
         for (int i=0; i < this.psp.size();i++){
-            if (this.psp.get(i).getId() == id){
+            if (this.psp.get(i).getId().equals(id)){
                 this.psp.set(i, psp);
                 return psp;
             }
@@ -47,7 +48,7 @@ public class QuestionnaireRepository {
 
     public boolean deletePSP (String id){
         for (int i=0; i < this.psp.size();i++){
-            if (this.psp.get(i).getId() == id){
+            if (this.psp.get(i).getId().equals(id)){
                 this.psp.remove(i);
                 return true;
             }

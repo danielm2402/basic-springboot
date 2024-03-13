@@ -15,4 +15,7 @@ public class PsychologicalSupportProcess {
     protected User user;
     protected ArrayList<AbstractQuestionnaire> questionnaires;
 
+    public PsychologicalSupportProcess() {
+
+    }
 }

@@ -21,4 +21,9 @@ public class PsyFactorsIntra extends AbstractQuestionnaire{
         this.questions.remove(index);
     }
 
+
+    public PsyFactorsIntra(){
+        super();
+
+    }
 }

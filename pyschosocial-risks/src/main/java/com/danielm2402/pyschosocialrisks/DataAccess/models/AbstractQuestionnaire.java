@@ -14,4 +14,8 @@ public abstract class AbstractQuestionnaire {
 
     protected abstract void addQuestion(AQuestion question);
     protected abstract void removeQuestion(Integer index);
+
+    public AbstractQuestionnaire(){
+
+    }
 }

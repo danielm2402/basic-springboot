@@ -15,4 +15,7 @@ public abstract class AQuestion {
 
     protected abstract void addAnswer(String answer);
 
+    public AQuestion(){
+
+    }
 }

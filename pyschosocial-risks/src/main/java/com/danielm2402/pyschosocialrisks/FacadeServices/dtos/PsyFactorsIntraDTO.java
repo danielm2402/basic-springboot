@@ -5,13 +5,10 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 
-@Getter
-@Setter
-@AllArgsConstructor
-public class PsyFactorsIntraDTO {
-
-    private ArrayList<AQuestionDTO> questions;
+@Getter @Setter @AllArgsConstructor
+public class PsyFactorsIntraDTO extends AbstractQuestionnaireDTO{
     private String name;
     private Integer score;
-
+    public PsyFactorsIntraDTO(){
+    }
 }

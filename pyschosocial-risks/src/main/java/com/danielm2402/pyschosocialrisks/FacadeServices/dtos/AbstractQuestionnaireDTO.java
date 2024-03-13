@@ -7,12 +7,10 @@ import lombok.Setter;
 import java.util.ArrayList;
 
 @Getter @Setter @AllArgsConstructor
-public class AbstractQuestionnaireDTO {
-    protected ArrayList <AQuestionDTO> questions;
+public abstract class AbstractQuestionnaireDTO {
     protected String name;
     protected Integer score;
-
-    public AbstractQuestionnaireDTO(){
+    protected AbstractQuestionnaireDTO(){
 
     }
 }

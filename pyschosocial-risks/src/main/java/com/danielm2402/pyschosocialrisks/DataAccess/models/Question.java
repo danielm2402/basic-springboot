@@ -13,4 +13,8 @@ public class Question extends AQuestion{
     public void addAnswer(String answer) {
         this.answers.add(answer);
     }
+
+    public Question(){
+
+    }
 }
