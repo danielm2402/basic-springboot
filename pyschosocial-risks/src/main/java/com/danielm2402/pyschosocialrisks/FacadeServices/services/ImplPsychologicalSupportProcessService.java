@@ -38,9 +38,10 @@ public class ImplPsychologicalSupportProcessService implements IPsychologicalSup
 
     @Override
     public PsychologicalSupportProcessDTO create(PsychologicalSupportProcessDTO psp ) {
-        System.out.println("PROBANDOOO" + psp);
-    System.out.println(psp.getName());
-    return null;
+       PsychologicalSupportProcess psychologicalSupportProcess = this.psp.toEntity(psp);
+       PsychologicalSupportProcess obj = this.questionnaireService.savePSP(psychologicalSupportProcess);
+       PsychologicalSupportProcessDTO psychologicalSupportProcessDTO = this.psp.toDto(obj);
+       return psychologicalSupportProcessDTO;
     }
 
     @Override

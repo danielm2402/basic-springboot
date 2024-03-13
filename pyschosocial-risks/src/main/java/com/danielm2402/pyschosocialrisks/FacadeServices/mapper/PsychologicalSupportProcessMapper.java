@@ -31,15 +31,17 @@ public interface PsychologicalSupportProcessMapper {
         }
         return null;
     }
-
     PsyFactorsExtraDTO map(PsyFactorsExtra psyFactorsExtra);
     PsyFactorsIntraDTO map(PsyFactorsIntra psyFactorsIntra);
 
-
     default AbstractQuestionnaire map(AbstractQuestionnaireDTO questionnaire) {
+        if (questionnaire instanceof PsyFactorsExtraDTO) {
             return map((PsyFactorsExtraDTO) questionnaire);
+        } else if (questionnaire instanceof PsyFactorsIntraDTO) {
+            return map((PsyFactorsIntraDTO) questionnaire);
+        }
+        return null;
     }
-
     PsyFactorsExtra map(PsyFactorsExtraDTO psyFactorsExtra);
     PsyFactorsIntra map(PsyFactorsIntraDTO psyFactorsIntra);
 
