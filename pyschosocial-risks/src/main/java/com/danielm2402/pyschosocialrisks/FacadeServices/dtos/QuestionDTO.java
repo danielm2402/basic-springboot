@@ -14,4 +14,8 @@ public class QuestionDTO extends AQuestionDTO {
     protected String question;
     protected ArrayList<String> answers;
     protected String answer;
+
+    public QuestionDTO(){
+
+    }
 }

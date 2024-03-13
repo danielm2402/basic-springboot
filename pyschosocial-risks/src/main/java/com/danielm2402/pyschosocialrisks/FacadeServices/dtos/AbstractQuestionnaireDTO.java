@@ -1,8 +1,7 @@
 package com.danielm2402.pyschosocialrisks.FacadeServices.dtos;
-
-import com.danielm2402.pyschosocialrisks.DataAccess.models.AQuestion;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,7 +18,8 @@ import java.util.ArrayList;
 public abstract class AbstractQuestionnaireDTO {
     protected String name;
     protected Integer score;
-    protected ArrayList <AQuestion> questions;
+    @JsonDeserialize(contentAs = AQuestionDTO.class)
+    protected ArrayList <AQuestionDTO> questions;
     protected AbstractQuestionnaireDTO(){
 
     }
