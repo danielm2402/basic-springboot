@@ -48,7 +48,9 @@ public class ImplPsychologicalSupportProcessService implements IPsychologicalSup
 
     @Override
     public PsychologicalSupportProcessDTO findById(String id) {
-       return null;
+        PsychologicalSupportProcess psychologicalSupportProcess = this.questionnaireService.findById(id);
+        PsychologicalSupportProcessDTO psychologicalSupportProcessDTO = this.psp.toDto(psychologicalSupportProcess);
+       return psychologicalSupportProcessDTO;
     }
 
 
