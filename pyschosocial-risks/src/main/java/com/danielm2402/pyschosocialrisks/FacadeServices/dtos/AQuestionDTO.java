@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 
 @Getter @Setter @AllArgsConstructor
-public class AQuestionDTO {
+public abstract class AQuestionDTO {
     protected String question;
     protected ArrayList<String> answers;
     protected String answer;
