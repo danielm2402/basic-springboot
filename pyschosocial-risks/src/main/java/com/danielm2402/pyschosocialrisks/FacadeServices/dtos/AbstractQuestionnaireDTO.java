@@ -1,5 +1,6 @@
 package com.danielm2402.pyschosocialrisks.FacadeServices.dtos;
 
+import com.danielm2402.pyschosocialrisks.DataAccess.models.AQuestion;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.AllArgsConstructor;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 public abstract class AbstractQuestionnaireDTO {
     protected String name;
     protected Integer score;
+    protected ArrayList <AQuestion> questions;
     protected AbstractQuestionnaireDTO(){
 
     }

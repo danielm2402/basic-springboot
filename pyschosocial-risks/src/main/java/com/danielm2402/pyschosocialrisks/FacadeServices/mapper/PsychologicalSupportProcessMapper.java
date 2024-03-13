@@ -1,13 +1,7 @@
 package com.danielm2402.pyschosocialrisks.FacadeServices.mapper;
 
-import com.danielm2402.pyschosocialrisks.DataAccess.models.AbstractQuestionnaire;
-import com.danielm2402.pyschosocialrisks.DataAccess.models.PsyFactorsExtra;
-import com.danielm2402.pyschosocialrisks.DataAccess.models.PsyFactorsIntra;
-import com.danielm2402.pyschosocialrisks.DataAccess.models.PsychologicalSupportProcess;
-import com.danielm2402.pyschosocialrisks.FacadeServices.dtos.AbstractQuestionnaireDTO;
-import com.danielm2402.pyschosocialrisks.FacadeServices.dtos.PsyFactorsExtraDTO;
-import com.danielm2402.pyschosocialrisks.FacadeServices.dtos.PsyFactorsIntraDTO;
-import com.danielm2402.pyschosocialrisks.FacadeServices.dtos.PsychologicalSupportProcessDTO;
+import com.danielm2402.pyschosocialrisks.DataAccess.models.*;
+import com.danielm2402.pyschosocialrisks.FacadeServices.dtos.*;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
@@ -44,5 +38,17 @@ public interface PsychologicalSupportProcessMapper {
     }
     PsyFactorsExtra map(PsyFactorsExtraDTO psyFactorsExtra);
     PsyFactorsIntra map(PsyFactorsIntraDTO psyFactorsIntra);
+
+    default AQuestionDTO map(AQuestion question){
+        return map((Question) question);
+    }
+
+    default AQuestion map(AQuestionDTO question){
+        return map((QuestionDTO) question);
+    }
+
+    QuestionDTO map(Question question);
+    Question map(QuestionDTO question);
+
 
 }
